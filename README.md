@@ -1,10 +1,26 @@
 # 공공데이터 API를 이용한 DUR품목정보 데이터 수집 (웹 크롤러)(web crawler)
 - 시작날짜 : 2019년 01월 30일 (수)
 - 프로젝트명 : DUR품목정보에서 병용금기 정보조회 데이터 수집
-- 수집하는 데이터 : 공공데이터(www.data.go.kr)-식품의약품안전처 의약품 관련 정보-DUR품목정보(DURPrdlstInfoService)-병용금기정보조회(getUsjntTabooInfoList)
+- 수집하는 데이터 : 공공데이터(www.data.go.kr)-식품의약품안전처 의약품 관련 정보-DUR품목정보(DURPrdlstInfoService)-병용금기정보조회(getUsjntTabooInfoList) [링크](https://www.data.go.kr/subMain.jsp?param=T1BFTkFQSUAxNTAyMDYyNw==#/L3B1YnIvcG90L215cC9Jcm9zTXlQYWdlL29wZW5EZXZHdWlkZVBhZ2UkQF4wMTJtMSRAXnB1YmxpY0RhdGFQaz0xNTAyMDYyNyRAXnB1YmxpY0RhdGFEZXRhaWxQaz11ZGRpOmZhMmViZjJjLTY0NTMtNGY5ZC1iZDg5LWVmOGUzYzc3ZTE5ZiRAXm9wcnRpblNlcU5vPTE2NzQ2JEBebWFpbkZsYWc9dHJ1ZQ==)
 - 제작언어 : R lanaguage [링크](https://www.r-project.org/)
 - 구성파일 : DURPrdlstInfoService.Rproj (R프로젝트 파일), DURPrdlstInfoService.R (R 코드파일)
-
+R.version
+```
+platform       x86_64-w64-mingw32          
+arch           x86_64                      
+os             mingw32                     
+system         x86_64, mingw32             
+status                                     
+major          3                           
+minor          5.2                         
+year           2018                        
+month          12                          
+day            20                          
+svn rev        75870                       
+language       R                           
+version.string R version 3.5.2 (2018-12-20)
+nickname       Eggshell Igloo            
+```
 ----
 
 ## DURPrdlistInfoService.R 크롤링 중 발생한 문제점
