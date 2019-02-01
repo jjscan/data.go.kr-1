@@ -118,9 +118,22 @@ while(as.numeric(chk_totalCount)==0){ # 폴딩방식으로 무한대기
 
 ![img](https://t1.daumcdn.net/cfile/tistory/21212C4C5895DD5E11)
 
-- **추가설명** : MPI(Message Passing Interface)를 위한 R 패키지로 Rmpi를 선택하였다. 추가적으로 윈도우 환경에서 MPI 서브시스템 구현을 위해서 MS-MPI[링크](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi)를 사용한다. 리눅스 환경에서는 OpenMPI를 이용한다. 
+- **추가설명** : R의 병렬 처리는 암시적 컴퓨팅 모드(Implicit Mode)와 명시적 컴퓨팅 모드(Explicit Mode)로 나눌 수 있다.
+
+- 암시적 컴퓨팅 모드(Implicit Mode)
+  R High-Performance and Parallel Computing with R의 리스트에 많은 병렬 패키지와 도구가 있다. 이들 병렬 패키지들은 다른 R 패키지처럼 빠르고 편하게 사용할 수 있다. R 유저들은 항상 문제 자체에 집중하고, 병렬 실행 및 성능 이슈에 많이 고민할 필요가 없다. 
+  예를 들어 `H2O.ai`를 생각해 보면, 이는 멀티-스레드와 멀티-노드 컴퓨팅을 수행하도록 백엔드(Backend)로 Java를 선택한다. 유저들은 패키지를 불러와서 스레드 개수로 H2O를 초기화하기만 하면 된다. 이후 `GBM`, `GLM`, `DeepLearning` 알고리즘과 같은 후속 연산은 자동으로 멀티-스레드와 멀티-코어로 할당된다. 
+
+- 명시적 컴퓨팅 모드(Explicit Mode)
+  명시적 병렬 컴퓨팅은 데이터 파티션, 작업 분배, 최종 결과 수집을 포함하는 상세 설정을 유저가 설정할 수 있도록 한다. 유저는 각자의 알고리즘을 이해해야 할 뿐만 아니라 하드웨어와 소프트웨어 스택을 확실히 이해해야 한다. 그래서 이 모드는 유저에게 다소 어렵다.
+  다행히, `parallel`, `Rmpi`, `foreach` 등의 R의 병렬 컴퓨팅 프레임웍은 맵핑 구조(Mapping Structure)에 의한 간단한 병렬 프로그래밍 방법을 제공한다. R 유저들은 `\*apply` 또는 `for`의 형태로 코드를 변환하기만 하고 이들을 `mc*apply` 또는 `foreach` 등과 같은 병렬 API로 교체하기만 하면 된다. 보다 복잡한 컴퓨팅 플로우(Flow)에 대하여 유저는 Map-and-reduce를 반복할 수 있다.
+
+![img](https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F2233904C5895DD603185B8)
+
+  MPI(Message Passing Interface)를 위한 R 패키지로 Rmpi를 선택하였다. 또한, 현재 개발환경이 윈도우이므로, 윈도우 환경에서 MPI 서브시스템 구현을 위해서 MS-MPI[링크](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi)를 사용한다. 리눅스 환경에서는 OpenMPI를 이용한다.  그 외에도 다양한 패키지들이 존재한다.[링크](https://cran.r-project.org/web/views/HighPerformanceComputing.html)
 
 R에서 Rmpi를 사용하려면, MS-MPI를 설치한 이후에 Rstudio 바로가기를 `"C:\Program Files\Microsoft MPI\Bin\mpiexec.exe" -n 1 "C:\Program Files\RStudio\bin\rstudio.exe"`처럼 수정하여 생성하고 실행한다.
+
 ```
 # in Rstudio to spawn R slaves.
 mpi.spawn.Rslaves()
@@ -132,9 +145,12 @@ mpi.exit()
 ```
 
 
+
 ** 계속 업데이트 중.... **
 
-- **참고문헌** : R 병렬 프로그래밍 (사이먼 채플 외 지음)
+- **참고문헌**
+- R 병렬 프로그래밍 (사이먼 채플 외 지음)
+- [Data Science / Posts] 사용자 관점에서의 R 병렬 컴퓨팅[링크](https://cinema4dr12.tistory.com/1024)
 
 ----
 
