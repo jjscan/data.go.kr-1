@@ -3,7 +3,7 @@
 - 프로젝트명 : DUR품목정보에서 병용금기 정보조회 데이터 수집
 - 수집하는 데이터 : 공공데이터(www.data.go.kr)-식품의약품안전처 의약품 관련 정보-DUR품목정보(DURPrdlstInfoService)-병용금기정보조회(getUsjntTabooInfoList) [링크](https://www.data.go.kr/subMain.jsp?param=T1BFTkFQSUAxNTAyMDYyNw==#/L3B1YnIvcG90L215cC9Jcm9zTXlQYWdlL29wZW5EZXZHdWlkZVBhZ2UkQF4wMTJtMSRAXnB1YmxpY0RhdGFQaz0xNTAyMDYyNyRAXnB1YmxpY0RhdGFEZXRhaWxQaz11ZGRpOmZhMmViZjJjLTY0NTMtNGY5ZC1iZDg5LWVmOGUzYzc3ZTE5ZiRAXm9wcnRpblNlcU5vPTE2NzQ2JEBebWFpbkZsYWc9dHJ1ZQ==)
 - 제작언어 : R lanaguage [링크](https://www.r-project.org/)
-- 구성파일 : DURPrdlstInfoService.Rproj (R프로젝트 파일), DURPrdlstInfoService.R (R 코드파일)
+- 구성파일 : DURPrdlstInfoService.R (R 코드파일)
 
 R.version
 ```
