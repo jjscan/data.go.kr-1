@@ -106,7 +106,7 @@ while(as.numeric(chk_totalCount)==0){ # 폴딩방식으로 무한대기
 
 #### 네 번째) Single Thread VS Muti-Threads
 
-![img](https://t1.daumcdn.net/cfile/tistory/21212C4C5895DD5E11)
+![img](https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F234F944C5895DD602EF4F4)
 
 - **문제점** : R은 싱글쓰레드로 제작된 언어이기 때문에 처리해야할 데이터의 양이 늘어나면 처리속도가 기하급수적으로 감소한다. 
 
@@ -115,6 +115,8 @@ while(as.numeric(chk_totalCount)==0){ # 폴딩방식으로 무한대기
   병용금기를 약 35만 건을 CSV파일로 처리하는데, 초기에는 1시간에 33%를 완료했지만, 점점 느려져서 17시간이 걸렸다.
 
 - **해결방법** : R 병렬 프로그래밍을 구현하여 처리 속도를 향상한다.
+
+![img](https://t1.daumcdn.net/cfile/tistory/21212C4C5895DD5E11)
 
 - **추가설명** : MPI(Message Passing Interface)를 위한 R 패키지로 Rmpi를 선택하였다. 추가적으로 윈도우 환경에서 MPI 서브시스템 구현을 위해서 MS-MPI[링크](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi)를 사용한다. 리눅스 환경에서는 OpenMPI를 이용한다. 
 
